@@ -13,10 +13,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var defaultTipsControl: UISegmentedControl!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     
+    let model = CalculatorModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let defaultIndex = getTipsControlDefaultIndex()
+        let defaultIndex = model.tipsControlDefaultIndex
         if defaultIndex != nil {
             defaultTipsControl.selectedSegmentIndex = defaultIndex
         }
@@ -29,7 +31,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func onDefaultTipsChange(sender: AnyObject) {
         let selectedIndex = defaultTipsControl.selectedSegmentIndex
-        setTipsControlDefaultIndex(selectedIndex)
+        model.tipsControlDefaultIndex = selectedIndex
     }
 
     @IBAction func closeAction(sender: AnyObject) {

@@ -8,15 +8,28 @@
 
 import Foundation
 
-let DefaultIndexKey = "defaultIndex"
+let defaults = NSUserDefaults.standardUserDefaults()
 
-func getTipsControlDefaultIndex() -> NSInteger {
-    var defaults = NSUserDefaults.standardUserDefaults()
-    return defaults.integerForKey(DefaultIndexKey)
+// Overloading for Int's
+func getPersistedKey(key: String) -> Int {
+    return defaults.integerForKey(key)
 }
 
-func setTipsControlDefaultIndex(index: NSInteger) {
-    var defaults = NSUserDefaults.standardUserDefaults()
-    defaults.setInteger(index, forKey: DefaultIndexKey)
+func setPersistedKey(key: String, value: Int) {
+    defaults.setInteger(value, forKey: key)
     defaults.synchronize()
+}
+
+// Overloading for Double's
+func getPersistedKey(key: String) -> Double {
+    return defaults.doubleForKey(key)
+}
+
+func setPersistedKey(key: String, value: Double) {
+    defaults.setDouble(value, forKey: key)
+    defaults.synchronize()
+}
+
+func clearPersistedKey(key: String) {
+    defaults.removeObjectForKey(key)
 }

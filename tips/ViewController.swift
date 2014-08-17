@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
+    
+    let model = CalculatorModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,14 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        let defaultIndex = getTipsControlDefaultIndex()
+        let defaultIndex = model.tipsControlDefaultIndex
         if defaultIndex != nil {
             tipControl.selectedSegmentIndex = defaultIndex
+        }
+        
+        let billAmount = model.billAmount
+        if billAmount != 0 {
+            billField.text = String(format: "%0.2f", billAmount)
         }
     }
 
@@ -46,6 +53,8 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         
+        // Persist bill amount
+        model.billAmount = billAmount
     }
 
     @IBAction func onTap(sender: AnyObject) {

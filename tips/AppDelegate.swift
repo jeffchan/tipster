@@ -12,10 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-
+    let model = CalculatorModel()
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        // Override point for customization after application launch.
+        
+        // If it's been a long time since the user opened the app, clear the bill amount field when applications enters foreground
+        model.maybeClearBillAmount()
+        
         return true
     }
 
@@ -27,10 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication!) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        // Save the last active time when application enters background
+        model.lastActive = CFAbsoluteTimeGetCurrent()
     }
 
     func applicationWillEnterForeground(application: UIApplication!) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        // If it's been a long time since the user opened the app, clear the bill amount field when applications enters foreground
+        model.maybeClearBillAmount()
     }
 
     func applicationDidBecomeActive(application: UIApplication!) {
