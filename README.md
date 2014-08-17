@@ -1,0 +1,3 @@
+tipster
+=======
+Calculate yo tips
