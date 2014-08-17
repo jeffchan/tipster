@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var defaultIndex = getTipsControlDefaultIndex()
+        let defaultIndex = getTipsControlDefaultIndex()
         if defaultIndex != nil {
             defaultTipsControl.selectedSegmentIndex = defaultIndex
         }
@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onDefaultTipsChange(sender: AnyObject) {
-        var selectedIndex = defaultTipsControl.selectedSegmentIndex
+        let selectedIndex = defaultTipsControl.selectedSegmentIndex
         setTipsControlDefaultIndex(selectedIndex)
     }
 
