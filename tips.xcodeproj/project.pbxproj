@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		599A630019A0340A0095816A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A62FF19A0340A0095816A /* SettingsViewController.swift */; };
+		599A630419A135DC0095816A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A630319A135DC0095816A /* Utils.swift */; };
 		59D293A119A01B0600269D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D293A019A01B0600269D6C /* AppDelegate.swift */; };
 		59D293A319A01B0600269D6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D293A219A01B0600269D6C /* ViewController.swift */; };
 		59D293A619A01B0600269D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59D293A419A01B0600269D6C /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		599A62FF19A0340A0095816A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		599A630319A135DC0095816A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		59D2939B19A01B0600269D6C /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D2939F19A01B0600269D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59D293A019A01B0600269D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		599A630119A0340D0095816A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				599A62FF19A0340A0095816A /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		599A630219A135990095816A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				599A630319A135DC0095816A /* Utils.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		59D2939219A01B0600269D6C = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +95,8 @@
 		59D2939D19A01B0600269D6C /* tips */ = {
 			isa = PBXGroup;
 			children = (
+				599A630219A135990095816A /* Utilities */,
+				599A630119A0340D0095816A /* ViewControllers */,
 				59D293A019A01B0600269D6C /* AppDelegate.swift */,
 				59D293A219A01B0600269D6C /* ViewController.swift */,
 				59D293A419A01B0600269D6C /* Main.storyboard */,
@@ -210,6 +232,8 @@
 			files = (
 				59D293A319A01B0600269D6C /* ViewController.swift in Sources */,
 				59D293A119A01B0600269D6C /* AppDelegate.swift in Sources */,
+				599A630019A0340A0095816A /* SettingsViewController.swift in Sources */,
+				599A630419A135DC0095816A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -337,6 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -395,6 +421,7 @@
 				59D293B919A01B0600269D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59D293BA19A01B0600269D6C /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +430,7 @@
 				59D293BC19A01B0600269D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
